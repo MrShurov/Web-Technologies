@@ -1,5 +1,6 @@
 package web.web.dao.jpa;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ import static javax.persistence.GenerationType.AUTO;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Word {
 
     @Id
@@ -24,5 +26,10 @@ public class Word {
     private String word;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "siteId")
-    private String site;
+    private Site site;
+
+    public Word(String word, Site site) {
+        this.word = word;
+        this.site = site;
+    }
 }
