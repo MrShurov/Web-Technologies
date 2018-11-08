@@ -7,7 +7,7 @@ import web.web.dao.jpa.Site;
 
 import java.util.List;
 
-@RequestMapping("/site")
+@RequestMapping("rest/site")
 public interface SiteController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
