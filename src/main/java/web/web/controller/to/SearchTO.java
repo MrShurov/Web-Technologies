@@ -1,10 +1,8 @@
-package web.web.rest.to;
+package web.web.controller.to;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
 
 @Data
 @NoArgsConstructor

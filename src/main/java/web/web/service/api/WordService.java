@@ -1,7 +1,6 @@
 package web.web.service.api;
 
-import web.web.dao.jpa.Word;
-import web.web.rest.to.SearchTO;
+import web.web.controller.to.SearchTO;
 
 import java.util.List;
 

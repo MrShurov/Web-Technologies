@@ -2,12 +2,12 @@ package web.web.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import web.web.dao.api.WordDao;
 import web.web.dao.jpa.Word;
-import web.web.rest.to.SearchTO;
+import web.web.controller.to.SearchTO;
 import web.web.service.api.WordService;
 
-import javax.management.ObjectName;
 import java.util.*;
 
 import static web.web.service.Search.search;
@@ -18,6 +18,7 @@ public class WordServiceImpl implements WordService {
     @Autowired
     WordDao wordDao;
 
+    @Transactional
     @Override
     public List<SearchTO> searchWords(String searchString) {
         List<Word> words = wordDao.findAll();
